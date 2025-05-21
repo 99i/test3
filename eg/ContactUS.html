@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <title>First Trust Debt Collection Company</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+
+    </style>
+    <style>
+        /* Ensure header stays above content */
+        .header-area.header-sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Increased z-index to keep header above content */
+            background-color: #333; /* Ensure background is solid to prevent transparency */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for visibility */
+        }
+
+        /* Navigation menu styles */
+        .nav li a {
+            color: #fff !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav li a.active {
+            color: #000000 !important;
+            font-weight: bold;
+        }
+
+        .nav li a:hover {
+            color: #000000 !important;
+        }
+
+        /* Menu trigger button styles */
+        .menu-trigger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        @media (max-width: 991px) {
+            .menu-trigger {
+                display: block;
+            }
+            .nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #333;
+                padding: 20px 0;
+                text-align: center;
+            }
+            .nav.show {
+                display: block;
+            }
+            .nav li {
+                display: block;
+                margin: 10px 0;
+            }
+            .nav li a {
+                color: #fff;
+                padding: 10px 20px;
+                display: block;
+            }
+        }
+
+        /* Adjust content to prevent overlap with fixed header */
+        body {
+            padding-top: 120px; /* Adjust based on header height; increase if needed */
+        }
+
+        /* Existing styles for down-content */
+        .down-content {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            margin: 15px 0;
+            transition: box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            position: relative; /* Ensure content stays in normal flow */
+            z-index: 1; /* Lower than header to prevent overlap */
+        }
+        .down-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .down-content:hover {
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+        .down-content h4 {
+            color: #F2AA52;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: "Cairo", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600; /* Replace <weight> with a specific value, e.g., 400 for regular */
+            font-style: normal;
+            font-variation-settings: "slnt" 0;
+        }
+        .down-content h4:hover {
+            color: #F2AA52;
+            text-decoration: none;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+            flex: 1;
+            min-width: 90px;
+
+        }
+        .contact-item {
+            font-family: "Cairo", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600; /* Replace <weight> with a specific value, e.g., 400 for regular */
+            font-style: normal;
+            font-variation-settings: "slnt" 0;
+        }
+        .contact-item:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        .contact-item i,
+        .contact-item img {
+            font-size: 1.8rem;
+            width: 1.8rem;
+            height: 1.8rem;
+            object-fit: contain;
+            color: #F2AA52;
+            margin-bottom: 8px;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .contact-item:hover i,
+        .contact-item:hover img {
+            color: #F2AA52;
+            transform: scale(1.15);
+        }
+        /* Animation for main-button-red */
+        .main-button-red {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .main-button-red.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Form styles */
+        .contact-form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .contact-form h4 {
+            color: #F2AA52;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #333;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #F2AA52;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+        .submit-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(to right, #ff6b6b, #ff8e53);
+            color: #fff;
+            text-align: center;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit-button:hover {
+            background: linear-gradient(to right, #ff8e53, #ff6b6b);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 576px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact-item {
+                width: 100%;
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo.png" class="navbar-brand-image img-fluid" alt="">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="index.html#section1" style="color: #F2AA52 !important;">Home</a></li>
+              <li class="scroll-to-section"><a href="index.html#section2" style="color: #F2AA52 !important;">Services</a></li>
+              <li class="scroll-to-section"><a href="index.html#section3" style="color: #F2AA52 !important;">About Us</a></li>
+              <li class="scroll-to-section"><a href="index.html#section4" style="color: #F2AA52 !important;">Why Choose Us</a></li>
+              <li class="scroll-to-section"><a href="#contact" class="active" style="color: #F2AA52 !important;">Contact Us</a></li>
+            </ul>
+            <div class="lang-toggle">
+              <button onclick="window.location.href='../ar/ContactUS.html'">English / العربية</button>
+            </div>
+            <a class='menu-trigger'>
+              <i class="fas fa-bars"></i>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+    <!-- ***** Header Area End ***** -->
+
+    <section class="heading-page header-text" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Contact Us</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="meetings-page" id="meetings">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="meeting-single-item">
+                                <div class="down-content">
+                                    <div class="date">
+                                        <span>Available</span>
+                                    </div>
+                                    <div class="mt-4">
+                                        <a href="meeting-details.html">
+                                            <h4 class="text-xl font-bold text-gray-800 ">Contact Information</h4>
+                                        </a>
+                                    </div>
+                                    <div class="contact-info mt-6 space-y-4">
+                                        <a class="contact-item text-gray-600 hover:text-blue-600">
+                                            <img src="assets/images/eml.png" alt="Email Icon">
+                                            info@thigah1.com
+                                        </a>
+                                        <a href="https://maps.app.goo.gl/fj8SDTe8Pp1Y5chX6" class="contact-item text-gray-600 hover:text-blue-600"target="_blank">
+                                            <img src="assets/images/loc.png" alt="Location Icon">
+                                            الرياض - حي الملز - طريق صلاح الدين الأيوبي - الطابق الأول، المكتب 101
+                                        </a>
+                                        <a class="contact-item text-gray-600 hover:text-blue-600">
+                                            <img src="assets/images/pho.png" alt="Phone Icon">
+                                            <span>00966-591-445-419<br><br>00966-530-989-313</span><br>
+                                        </a>
+                                        <a href="https://api.whatsapp.com/send/?phone=966530989313&text=" class="contact-item text-gray-600 hover:text-blue-600" target="_blank">
+                                            <img src="assets/images/whats.png" alt="WhatsApp Icon">
+                                            WhatsApp
+                                        </a>
+                                        <a href="https://x.com/first_trust1?s=21" class="contact-item text-gray-600 hover:text-blue-600" target="_blank">
+                                            <i class="fab fa-x-twitter"></i>
+                                            Twitter
+                                        </a>
+                                        <a href="https://www.linkedin.com/company/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AB%D9%82%D9%87-%D8%A7%D9%84%D8%A7%D9%88%D9%84%D9%89-%D9%84%D8%AA%D8%AD%D8%B5%D9%8A%D9%84-%D8%A7%D9%84%D8%AF%D9%8A%D9%88%D9%86/about/" class="contact-item text-gray-600 hover:text-blue-600" target="_blank">
+                                            <i class="fab fa-linkedin"></i>
+                                            LinkedIn
+                                        </a>
+                                    </div>
+                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+      
+                    </div>
+                </div>
+            </div>
+        </div>
+<section class="contact-us section" id="contact" data-section="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div id="contact">
+            <h2>Get in Touch</h2>
+            <form action="#" method="post">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <input type="text" name="subject" placeholder="Subject">
+              <textarea name="message" placeholder="Your Message" required></textarea>
+              <button type="submit" class="submit-button">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+        </div>
+  </section>
+</section>
+
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        // Navigation scripts
+        $('.nav li:first').addClass('active');
+
+        // Menu toggle for mobile
+        $('.menu-trigger').click(function () {
+          $(this).toggleClass('active');
+          $('.nav').toggleClass('show');
+          
+          // Animate menu items
+          if ($('.nav').hasClass('show')) {
+            $('.nav li').each(function(index) {
+              $(this).css({
+                'transition-delay': (index * 0.1) + 's'
+              });
+            });
+          } else {
+            $('.nav li').css('transition-delay', '0s');
+          }
+        });
+
+        // Close menu when clicking outside
+        $(document).click(function(e) {
+          if (!$(e.target).closest('.main-nav').length) {
+            $('.nav').removeClass('show');
+            $('.menu-trigger').removeClass('active');
+            $('.nav li').css('transition-delay', '0s');
+          }
+        });
+
+        // Close menu when a nav link is clicked
+        $('.nav a').click(function () {
+          if ($('.nav').is(':visible')) {
+            $('.nav').removeClass('show');
+            $('.menu-trigger').removeClass('active');
+            $('.nav li').css('transition-delay', '0s');
+          }
+        });
+
+        var showSection = function showSection(section, isAnimate) {
+            var
+            direction = section.replace(/#/, ''),
+            reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+            reqSectionPos = reqSection.offset().top - 0;
+
+            if (isAnimate) {
+                $('body, html').animate({
+                    scrollTop: reqSectionPos },
+                800);
+            } else {
+                $('body, html').scrollTop(reqSectionPos);
+            }
+        };
+
+        var checkSection = function checkSection() {
+            $('.section').each(function () {
+                var
+                $this = $(this),
+                topEdge = $this.offset().top - 80,
+                bottomEdge = topEdge + $this.height(),
+                wScroll = $(window).scrollTop();
+                if (topEdge < wScroll && bottomEdge > wScroll) {
+                    var
+                    currentId = $this.data('section'),
+                    reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+                    reqLink.closest('li').addClass('active').
+                    siblings().removeClass('active');
+                }
+            });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+            e.preventDefault();
+            showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+            checkSection();
+        });
+
+        // Scroll animation for down-content and main-button-red
+        document.addEventListener('DOMContentLoaded', function () {
+            const elements = document.querySelectorAll('.down-content, .main-button-red, .contact-form');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            elements.forEach(element => observer.observe(element));
+        });
+    </script>
+</body>
+</html>
