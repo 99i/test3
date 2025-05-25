@@ -14,59 +14,40 @@
       background: #1c2526;
     }
 
-    .logo {
+    .loader {
       width: 50px;
-      height: 50px;
-      position: relative;
-      background: #ffd166;
-      overflow: hidden;
+      aspect-ratio: 1;
+      display: grid;
     }
 
-    .logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
+    .loader::before,
+    .loader::after {    
+      content: "";
+      grid-area: 1/1;
+      --c: no-repeat radial-gradient(farthest-side, #F2D0A7 92%, #0000);
+      background: 
+        var(--c) 50%  0, 
+        var(--c) 50%  100%, 
+        var(--c) 100% 50%, 
+        var(--c) 0    50%;
+      background-size: 12px 12px;
+      animation: l12 1s infinite;
     }
 
-    .logo::before,
-    .logo::after {
-      content: '';
-      position: absolute;
-      background: #1c2526;
-      animation: fold 2s ease-in-out infinite;
-      z-index: 2;
+    .loader::before {
+      margin: 4px;
+      --c: no-repeat radial-gradient(farthest-side, #F2AA52 92%, #0000);
+      background-size: 8px 8px;
+      animation-timing-function: linear;
     }
 
-    .logo::before {
-      width: 100%;
-      height: 50%;
-      top: 0;
-      transform-origin: top;
-    }
-
-    .logo::after {
-      width: 100%;
-      height: 50%;
-      bottom: 0;
-      transform-origin: bottom;
-    }
-
-    @keyframes fold {
-      0%, 100% {
-        transform: rotateX(0deg);
-      }
-      50% {
-        transform: rotateX(90deg);
-      }
+    @keyframes l12 { 
+      100% { transform: rotate(.5turn) }
     }
   </style>
 </head>
 <body>
-  <div class="logo"><img src="assets/images/logo.png" alt="First Trust Logo"></div>
+  <div class="loader"></div>
   <script src="assets/js/loading.js"></script>
 </body>
 </html>

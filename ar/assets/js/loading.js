@@ -4,5 +4,5 @@ window.onload = function () {
     setTimeout(() => {
         sessionStorage.removeItem('targetUrl');
         window.location.href = targetUrl;
-    }, 1000);
+    }, 2000); // Increased to 2 seconds to match the fade out time
 }; 
