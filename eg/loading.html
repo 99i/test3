@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1c2526;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      background: #ffd166;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .logo::before,
+    .logo::after {
+      content: '';
+      position: absolute;
+      background: #1c2526;
+      animation: fold 2s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .logo::before {
+      width: 100%;
+      height: 50%;
+      top: 0;
+      transform-origin: top;
+    }
+
+    .logo::after {
+      width: 100%;
+      height: 50%;
+      bottom: 0;
+      transform-origin: bottom;
+    }
+
+    @keyframes fold {
+      0%, 100% {
+        transform: rotateX(0deg);
+      }
+      50% {
+        transform: rotateX(90deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo"><img src="assets/images/logo.png" alt="First Trust Logo"></div>
+  <script src="assets/js/loading.js"></script>
+</body>
+</html>
